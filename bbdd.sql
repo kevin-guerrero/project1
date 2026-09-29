@@ -1,1 +1,12 @@
-CREATE TABLE 
+-- Tabla de tasques
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id SERIAL NOT NULL,
+    title VARCHAR(150) NOT NULL,
+    description TEXT,
+    due_date DATE,
+    is_completed BOOLEAN NOT NULL DEFAULT FALSE,
+    date_creation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    date_modification TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT PK_TASKS PRIMARY KEY (id)
+);
